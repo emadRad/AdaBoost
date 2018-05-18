@@ -1,0 +1,24 @@
+The video sequence is already divided into its frames, each stored in png format.
+
+
+training file format:
+
+first line :
+<number of frames> 
+<name of the frame> <reference point x> <reference point y>
+
+<reference point x/y> is the reference point of the object in the corresponding frame. The object is defined by a rectangular bounding box of size 121x61 around this point.
+
+
+test file format:
+
+first line:
+<starting point x> <starting point y>
+
+second line:
+<number of frames>
+
+all other lines:
+<name of the frame>
+
+<starting point x/y> is the point at which the object was located in frame 10. That means, if you start tracking the object in frame 11, you can take <starting point> as the last known object position.
